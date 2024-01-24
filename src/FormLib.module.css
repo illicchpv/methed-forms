@@ -1,0 +1,7 @@
+.FormLib{
+  min-width: 160px;
+  min-height: 160px;
+  padding: 10px;
+  border: 1px solid darkgrey;
+  border-radius: 12px;
+}

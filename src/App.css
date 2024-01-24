@@ -1,5 +1,12 @@
-.App {
-  text-align: center;
+html{
+  box-sizing: border-box;
+}
+*{
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
@@ -22,6 +29,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  align-items: flex-start;
+  padding-left: 20px;
 }
 
 .App-link {
