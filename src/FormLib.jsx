@@ -39,9 +39,23 @@ export const FormLib = () => {
       <div className={_.wrap}>
         <label className={_.label} htmlFor="password">password</label>
         <input className={_.input} id="password" type="text" autoComplete="off"
-          {...register('password')}
+          {...register('password', {
+            required:{
+              value: true,
+              message: 'укажите пароль',
+            },
+            // pattern: {
+            //   value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{6,}/,
+            //   message: 'неверный формат пароля',
+            // }
+            pattern: {
+              value: /^(?=.*[a-z]).{6,}/,
+              message: 'неверный формат пароля',
+            }
+          })}
+          aria-invalid={!!errors.password}
         />
-        <p className={_.error}>сообщение об ошибке</p>
+        {errors.password && <p className={_.error}>{errors.password.message}</p>}
       </div>
 
       <div className={_.wrapCheckbox}>
